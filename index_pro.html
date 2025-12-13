@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtrixie - Професионални субтитри за инфлуенсъри</title>
+    
+    <!-- SEO мета тагове -->
+    <meta name="description" content="Професионални субтитри за инфлуенсъри в България. Създаване, корекция и оптимизация на субтитри за TikTok, Instagram, YouTube и други платформи.">
+    <meta name="keywords" content="субтитри, инфлуенсъри, видео, транскрипция, синхронизация, TikTok, Instagram, YouTube, субтитри България">
+    <meta name="author" content="Subtrixie">
+    <meta property="og:title" content="Subtrixie - Професионални субтитри за инфлуенсъри">
+    <meta property="og:description" content="Помагам на създателите на съдържание да достигат до по-широка аудитория с точни, стилни и синхронизирани субтитри">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9333EA;
+            --accent: #F472B6;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --success: #10B981;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header и Mobile Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .desktop-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--accent);
+        }
+
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 999;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav a:hover {
+            background: rgba(107, 70, 193, 0.1);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05), rgba(244, 114, 182, 0.05));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(107, 70, 193, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.03), rgba(244, 114, 182, 0.03));
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular::before {
+            content: 'Популярно';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .pricing-card.popular:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .pricing-header {
+            margin-bottom: 30px;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .price-period {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 12px;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features i {
+            color: var(--success);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05), rgba(244, 114, 182, 0.05));
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .portfolio-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(107, 70, 193, 0.2);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .video-thumb video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            color: white;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .video-thumb:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .portfolio-info {
+            padding: 25px;
+            background: white;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .portfolio-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .portfolio-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-top: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(107, 70, 193, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.03), rgba(244, 114, 182, 0.03));
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .blog-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05), rgba(244, 114, 182, 0.05));
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-message {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            border: 1px solid #EF4444;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular::before {
+                right: -25px;
+                padding: 5px 25px;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#home" class="logo">
+                <i class="fas fa-closed-captioning" aria-hidden="true"></i>
+                <span>Subtrixie</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home">Начало</a></li>
+                    <li><a href="#about">За мен</a></li>
+                    <li><a href="#pricing">Цени</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#portfolio">Портфолио</a></li>
+                    <li><a href="#blog">Блог</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Отвори меню">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#home">Начало</a></li>
+                <li><a href="#about">За мен</a></li>
+                <li><a href="#pricing">Цени</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Професионални субтитри за инфлуенсъри</h1>
+            <p>Помагам на създателите на съдържание да достигат до по-широка аудитория с точни, стилни и синхронизирани субтитри. Увеличавам ангажираността на видеата ви с до 85%.</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="btn btn-primary">Вижте моите работи</a>
+                <a href="#pricing" class="btn btn-secondary">Разгледайте цените</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>За Subtrixie</h2>
+                <p>Креативност, прецизност и разбиране на аудиторията</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Субтитри, които говорят на езика на вашата аудитория</h3>
+                    <p>Знам, че създаването на съдържание за социални мрежи идва със своите предизвикателства. Искам да помогна вашите видеа да достигнат до повече хора чрез качествени субтитри, които правят съдържанието ви по-достъпно и ангажиращо.</p>
+                    <p>Добрите субтитри не само подобряват преживяването на зрителите, но и помагат на търсачките да намират вашето съдържание по-лесно. Това увеличава видимостта ви и привлича нова аудитория към вашите видеа.</p>
+                    <p>Готов съм да съдействам за създаването на субтитри, които допринасят за стила и посланието на вашето съдържание, като същевременно подобряват откриваемостта ви онлайн.</p>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(107, 70, 193, 0.05); border-radius: 10px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">Факт:</h4>
+                        <p style="color: var(--gray); margin-bottom: 0;">82% от зрителите гледат видеа без звук в социалните мрежи. Качествените субтитри са ключът към тяхното внимание.</p>
+                    </div>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://subtrixie.github.io/SubTrixie/images/Infl.png" alt="Работа със субтитри за инфлуенсъри" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Цени и пакети</h2>
+                <p>Изберете пакета, който отговаря на вашите нужди</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <h3>Базов</h3>
+                        <div class="price">29 лв</div>
+                        <div class="price-period">за видео до 5 минути</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Транскрибиране на речта</li>
+                        <li><i class="fas fa-check"></i> Синхронизация на субтитри</li>
+                        <li><i class="fas fa-check"></i> Базово форматиране</li>
+                        <li><i class="fas fa-check"></i> Експорт за 1 платформа</li>
+                        <li><i class="fas fa-times" style="color: #EF4444;"></i> <span style="opacity: 0.6;">Визуални ефекти</span></li>
+                        <li><i class="fas fa-times" style="color: #EF4444;"></i> <span style="opacity: 0.6;">Корекция на съществуващи субтитри</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-secondary">Изберете пакет</a>
+                </div>
+                
+                <!-- Popular Package -->
+                <div class="pricing-card popular fade-in">
+                    <div class="pricing-header">
+                        <h3>Стандарт</h3>
+                        <div class="price">49 лв</div>
+                        <div class="price-period">за видео до 10 минути</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Всичко от Базовия пакет</li>
+                        <li><i class="fas fa-check"></i> Визуални ефекти и анимации</li>
+                        <li><i class="fas fa-check"></i> Оптимизация за 2 платформи</li>
+                        <li><i class="fas fa-check"></i> Ключови думи (SEO оптимизация)</li>
+                        <li><i class="fas fa-check"></i> 1 безплатна корекция</li>
+                        <li><i class="fas fa-times" style="color: #EF4444;"></i> <span style="opacity: 0.6;">Експресно изпълнение (24ч)</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-primary">Изберете пакет</a>
+                </div>
+                
+                <!-- Premium Package -->
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <h3>Премиум</h3>
+                        <div class="price">79 лв</div>
+                        <div class="price-period">за видео до 15 минути</div>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Всичко от Стандартния пакет</li>
+                        <li><i class="fas fa-check"></i> Експресно изпълнение (24 часа)</li>
+                        <li><i class="fas fa-check"></i> Неограничени корекции</li>
+                        <li><i class="fas fa-check"></i> Адаптация за всички платформи</li>
+                        <li><i class="fas fa-check"></i> Стилизиране по ваш бранд</li>
+                        <li><i class="fas fa-check"></i> Анализ на ангажираността</li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn btn-secondary">Изберете пакет</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="color: var(--gray);">Имате специфични изисквания? <a href="#contact" style="color: var(--primary); font-weight: 600;">Свържете се за индивидуална оферта</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Моите услуги</h2>
+                <p>Персонализирани решения за вашите видео проекти</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-closed-captioning" aria-hidden="true"></i>
+                    </div>
+                    <h3>Създаване на субтитри</h3>
+                    <p>Пълно създаване на субтитри от нулата - транскрибиране, синхронизация и форматиране според изискванията на платформата.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-language" aria-hidden="true"></i>
+                    </div>
+                    <h3>Корекция и подобрение</h3>
+                    <p>Проверка и подобряване на вече създадени субтитри - коригиране на грешки, подобряване на четимостта и синхронизацията.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                    </div>
+                    <h3>Оптимизация за платформи</h3>
+                    <p>Адаптиране на субтитрите за специфични изисквания на Instagram, TikTok, YouTube и други социални платформи.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Портфолио</h2>
+                <p>Примери от моята работа с инфлуенсъри</p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Всички</button>
+                <button class="filter-btn" data-filter="tiktok">TikTok</button>
+                <button class="filter-btn" data-filter="instagram">Instagram</button>
+                <button class="filter-btn" data-filter="youtube">YouTube</button>
+                <button class="filter-btn" data-filter="motivational">Мотивационни</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- ITEM 1 -->
+                <div class="portfolio-item fade-in" data-category="tiktok motivational">
+                    <div class="video-container">
+                        <div class="video-thumb" onclick="playVideo(this, 1)">
+                            <video preload="metadata" muted playsinline>
+                                <source src="https://subtrixie.github.io/SubTrixie/videos/d.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Ефектни субтитри за кратки формати</h3>
+                        <p>Динамични субтитри за кратки социални формати. Ефектите подчертават ключови думи, подобряват задържането на вниманието.</p>
+                        
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <div class="stat-number">+85%</div>
+                                <div class="stat-label">Ангажираност</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">+120%</div>
+                                <div class="stat-label">Споделяния</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">32s</div>
+                                <div class="stat-label">Средно гледане</div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-tags">
+                            <span class="tag">TikTok</span>
+                            <span class="tag">мотивационно съдържание</span>
+                            <span class="tag">бърз ритъм</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="portfolio-item fade-in" data-category="instagram">
+                    <div class="video-container">
+                        <div class="video-thumb" onclick="playVideo(this, 2)">
+                            <video preload="metadata" muted playsinline>
+                                <source src="https://subtrixie.github.io/SubTrixie/videos/c.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Елегантни субтитри за лайфстайл съдържание</h3>
+                        <p>По-меки анимации и изчистена типография за спокойни видеа, ревюта или лични послания.</p>
+                        
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <div class="stat-number">+65%</div>
+                                <div class="stat-label">Ангажираност</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">+90%</div>
+                                <div class="stat-label">Коментари</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">94%</div>
+                                <div class="stat-label">До края</div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-tags">
+                            <span class="tag">Instagram</span>
+                            <span class="tag">лайфстайл</span>
+                            <span class="tag">продуктови ревюта</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="portfolio-item fade-in" data-category="youtube">
+                    <div class="video-container">
+                        <div class="video-thumb" onclick="playVideo(this, 3)">
+                            <video preload="metadata" muted playsinline>
+                                <source src="https://subtrixie.github.io/SubTrixie/videos/output_with_subs.mp4" type="video/mp4">
+                            </video>
+                            <div class="play-btn">▶</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Професионални субтитри за обучителни видеа</h3>
+                        <p>Ясен, изчистен стил без визуални ефекти — подходящ за обучителни видеа, бизнес съдържание и професионални презентации.</p>
+                        
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <div class="stat-number">+110%</div>
+                                <div class="stat-label">SEO трафик</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">+75%</div>
+                                <div class="stat-label">Гледания</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">4.8x</div>
+                                <div class="stat-label">Повече споделяния</div>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-tags">
+                            <span class="tag">YouTube</span>
+                            <span class="tag">How-to видеа</span>
+                            <span class="tag">онлайн уроци</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Полезни статии</h2>
+                <p>Съвети и стратегии за ефективни субтитри</p>
+            </div>
+            
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Субтитри за социални мрежи" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Защо 82% от хората гледат видеа без звук?</h3>
+                        <p>Открийте как субтитрите могат да увеличат ангажираността на видеата ви в социалните мрежи и защо са критични за успеха ви онлайн.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 15 март 2025</span>
+                            <a href="#" class="read-more">Прочети повече →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Оптимизация на субтитри" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3>Как субтитрите подобряват SEO на видеата ви?</h3>
+                        <p>Научете как правилно форматираните субтитри могат да направят видеата ви по-лесно откриваеми в търсачките и платформите.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 28 февруари 2025</span>
+                            <a href="#" class="read-more">Прочети повече →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Стилове на субтитри" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <h3>5 стила на субтитри, които работят през 2025</h3>
+                        <p>От динамични анимации до минималистични дизайни - открийте кои стилове на субтитри са най-ефективни за различните платформи.</p>
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 10 февруари 2025</span>
+                            <a href="#" class="read-more">Прочети повече →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Свържете се с мен</h2>
+                <p>Готов съм да помогна на вашия проект да блесне</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Информация за контакт</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600;">Имейл</p>
+                            <p>subtrixie@protonmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600;">Instagram</p>
+                            <p>@subtrixie</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p style="font-weight: 600;">Време за отговор</p>
+                            <p>В рамките на 24 часа</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: rgba(107, 70, 193, 0.05); border-radius: 10px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">Процес на работа:</h4>
+                        <ol style="color: var(--gray); padding-left: 20px;">
+                            <li style="margin-bottom: 5px;">Изпращате видеото</li>
+                            <li style="margin-bottom: 5px;">Получавате оферта</li>
+                            <li style="margin-bottom: 5px;">Одобрявате</li>
+                            <li style="margin-bottom: 5px;">Получавате готовите субтитри</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="contact-form fade-in">
+                    <div id="formMessage" class="form-message"></div>
+                    
+                    <form id="contactForm" action="https://formspree.io/f/movglovj" method="POST">
+                        <div class="form-group">
+                            <label for="name">Вашето име *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Имейл адрес *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон (по желание)</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9+]{10,}">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Изберете услуга</label>
+                            <select id="service" name="service" class="form-control">
+                                <option value="">-- Изберете услуга --</option>
+                                <option value="basic">Базов пакет</option>
+                                <option value="standard">Стандартен пакет</option>
+                                <option value="premium">Премиум пакет</option>
+                                <option value="correction">Корекция на субтитри</option>
+                                <option value="other">Друго</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Съобщение *</label>
+                            <textarea id="message" name="message" class="form-control" required placeholder="Разкажете ми за вашия проект, дължина на видеото и специфични изисквания..."></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;">
+                            Изпрати съобщение
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="logo">
+                    <i class="fas fa-closed-captioning" aria-hidden="true"></i>
+                    <span>Subtrixie</span>
+                </a>
+                <div class="social-links">
+                    <a href="https://instagram.com/subtrixie" aria-label="Instagram профил">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn профил">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube канал">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" aria-label="TikTok профил">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Subtrixie. Всички права запазени.<br>
+                    Професионални субтитри за инфлуенсъри в България
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mobileNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        fadeInOnScroll(); // Initial check
+        
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Video play functionality
+        const videos = {
+            1: "https://subtrixie.github.io/SubTrixie/videos/d.mp4",
+            2: "https://subtrixie.github.io/SubTrixie/videos/c.mp4",
+            3: "https://subtrixie.github.io/SubTrixie/videos/output_with_subs.mp4"
+        };
+        
+        function playVideo(wrapper, id) {
+            const videoHTML = `
+                <video width="100%" height="100%" controls autoplay style="border-radius:10px;">
+                    <source src="${videos[id]}" type="video/mp4">
+                    Вашият браузър не поддържа видео таг.
+                </video>
+            `;
+            wrapper.innerHTML = videoHTML;
+            wrapper.style.cursor = 'default';
+        }
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Disable submit button and show loading
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<div class="loading"></div>Изпращане...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission (in a real scenario, this would be an actual fetch request)
+                setTimeout(() => {
+                    // Show success message
+                    formMessage.textContent = 'Съобщението ви е изпратено успешно! Ще се свържа с вас в рамките на 24 часа.';
+                    formMessage.className = 'form-message success';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    // Hide message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                }, 1500);
+            });
+        }
+        
+        // Add analytics tracking (example - replace with actual GA ID)
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX'); // Replace with your GA ID
+        
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonText = this.textContent.trim();
+                console.log(`CTA clicked: ${buttonText}`);
+                // In real implementation, send this to analytics
+            });
+        });
+    </script>
+</body>
+</html>
